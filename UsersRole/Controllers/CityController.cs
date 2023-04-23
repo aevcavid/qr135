@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
 using UsersRole.BLL.Abstract;
 using UsersRole.BLL.Concrete;
 using UsersRole.DTOs.CityDTOs;
@@ -27,6 +28,13 @@ namespace UsersRole.Controllers
         public IActionResult Add([FromBody] CityToAddDto dto)
         {
             _cityservice.Add(dto);
+            return Ok();
+        }
+        [HttpGet]
+        public IActionResult GetTestValue()
+        {
+            int eded = 23;
+            string a = "test";
             return Ok();
         }
     }
